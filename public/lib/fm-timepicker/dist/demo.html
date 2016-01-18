@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+<head>
+	<title></title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+</head>
+<body ng-controller="DemoController">
+<div class="container">
+	<div class="header">
+		<h3>fm-timepicker</h3>
+	</div>
+	<div class="row">
+		<div class="well">
+			<form class="form-horizontal" role="form" name="form" novalidate>
+				<div class="form-group" ng-class="{'has-error':form.time.$invalid}">
+					<label class="control-label col-sm-2" for="time">Test</label>
+
+					<div class="col-sm-10">
+						<fm-timepicker id="time"
+									   name="time"
+									   ng-model="time"
+									   fm-style="style"
+									   fm-start-time="start"
+									   fm-end-time="end"
+									   fm-interval="interval"
+									   fm-large-interval="largeInterval"
+									   fm-format="timeFormat"
+									   fm-is-open="isOpen"
+									   fm-disabled="disabled"
+									   fm-strict="strict"></fm-timepicker>
+						<p class="text-danger ng-cloak" ng-show="form.time.$error.time">The selected time is not a valid
+							time understood by fm-timepicker.</p>
+
+						<p class="text-danger ng-cloak" ng-show="form.time.$error.bounds">The selected time does not lie
+							within the specified start and end time.</p>
+
+						<p class="text-danger ng-cloak" ng-show="form.time.$error.interval">The selected time does not
+							lie on a time value that would fit the given time interval.</p>
+
+						<p class="text-danger ng-cloak" ng-show="form.date.$error.start">The given start time is
+							invalid.</p>
+
+						<p class="text-danger ng-cloak" ng-show="form.date.$error.end">The given end time is
+							invalid.</p>
+					</div>
+				</div>
+
+				<hr>
+
+				<label class="text-muted">I/O</label>
+
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="model">Model</label>
+
+					<div class="col-sm-10">
+						<input type="text" id="model" class="form-control" ng-model="time" disabled>
+
+						<p class="help-block">This input has the same moment instance set as the model as the
+							fm-timepicker above.</p>
+					</div>
+				</div>
+
+				<hr>
+
+				<label class="text-muted">Parameters</label>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Strict mode?</label>
+
+					<div class="col-sm-10">
+						<div class="checkbox">
+							<label class="control-label" for="strict">
+								<input type="checkbox" id="strict" ng-model="strict"> {{strict?'Yes':'No'}}
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="style">Style</label>
+
+					<div class="col-sm-10">
+						<select id="style" class="form-control" ng-model="style">
+							<option value="dropdown">Dropdown</option>
+							<option value="sequential">Sequential</option>
+						</select>
+
+						<p class="help-block">You can choose between having a dropdown with all available times, or
+							increment/decrement buttons.</p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="timeFormat">Format</label>
+
+					<div class="col-sm-10">
+						<input type="text" id="timeFormat" class="form-control" ng-model="timeFormat">
+
+						<p class="help-block">This <a href="http://momentjs.com/docs/#/displaying/format/">format</a>
+							will be used to render any moment instance that is
+							used in fm-timepicker. Try it!</p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="startTime">Start</label>
+
+					<div class="col-sm-10">
+						<input type="text" id="startTime" class="form-control" ng-model="startTime">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="endTime">End</label>
+
+					<div class="col-sm-10">
+						<input type="text" id="endTime" class="form-control" ng-model="endTime">
+
+						<p class="help-block">The start and end time are supplied to fm-timepicker as moment
+							instances.</p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="intervalMinutes">Interval (minutes)</label>
+
+					<div class="col-sm-10">
+						<input type="text" id="intervalMinutes" class="form-control" ng-model="intervalMinutes">
+
+						<p class="help-block">fm-timepicker actually supports arbitrary <a
+								href="http://momentjs.com/docs/#/durations/">moment.duration</a> instances as the
+							interval value. This minute input is just used for convenience in the demo environment.</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="largeIntervalMinutes">Large interval (minutes)</label>
+
+					<div class="col-sm-10">
+						<input type="text" id="largeIntervalMinutes" class="form-control"
+							   ng-model="largeIntervalMinutes">
+
+						<p class="help-block">The "large interval" is another <a
+								href="http://momentjs.com/docs/#/durations/">moment.duration</a> instance that defines
+							how far we will skip through the list when using the PageUp/PageDown keys. This has no
+							effect on the available options.</p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Disabled?</label>
+
+					<div class="col-sm-10">
+						<div class="checkbox">
+							<label class="control-label" for="disabled">
+								<input type="checkbox" id="disabled" ng-model="disabled"> {{disabled?'Yes':'No'}}
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group" ng-show="style=='dropdown'">
+					<label class="col-sm-2 control-label">Dropdown open?</label>
+
+					<div class="col-sm-10">
+						<div class="checkbox">
+							<label class="control-label" for="isOpen">
+								<input type="checkbox" id="isOpen" ng-model="isOpen"> {{isOpen?'Yes':'No'}}
+							</label>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.js"></script>
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="hamster.js"></script>
+<script src="fm-timepicker.tpls.js"></script>
+<script>
+	angular.module( "demo", [ "fmTimepicker" ] ).
+
+	controller( "DemoController", function( $scope ) {
+		// Our main parameters for the time picker.
+		// These will primarily be used to populate the scope of this demonstration.
+		$scope.style                = "dropdown";
+		$scope.timeFormat           = "HH:mm";
+		$scope.startTime            = "9:00";
+		$scope.endTime              = "18:00";
+		$scope.intervalMinutes      = 10;
+		$scope.largeIntervalMinutes = 60;
+
+		// Parameters that will actually be passed into the timepicker.
+		$scope.time  = moment( "15:01", $scope.timeFormat );
+		$scope.start = moment( $scope.startTime, $scope.timeFormat );
+		$scope.end   = moment( $scope.endTime, $scope.timeFormat );
+
+		// Watch parameters in our local scope and update the parameters in the timepicker as needed.
+		$scope.$watchCollection( "[startTime, timeFormat]", function( newValues ) {
+			$scope.start = moment( newValues[ 0 ], newValues[ 1 ] );
+		} );
+		$scope.$watchCollection( "[endTime, timeFormat]", function( newValues ) {
+			$scope.end = moment( newValues[ 0 ], newValues[ 1 ] );
+		} );
+		$scope.$watch( "intervalMinutes", function( newInterval ) {
+			$scope.interval = moment.duration( parseInt( newInterval ), "minutes" );
+		} );
+		$scope.$watch( "largeIntervalMinutes", function( newInterval ) {
+			$scope.largeInterval = moment.duration( parseInt( newInterval ), "minutes" );
+		} );
+	} );
+</script>
+</body>
+</html>

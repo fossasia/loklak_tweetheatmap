@@ -1,0 +1,23 @@
+{
+  "name": "fm-timepicker",
+  "description": "FairManager Time Picker Component",
+  "homepage": "https://github.com/fairmanager/fm-timepicker",
+  "authors": [
+    "Oliver Salzburg <oliver.salzburg@gmail.com>"
+  ],
+  "main": "dist/fm-timepicker.tpls.js",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "angular": ">=1.2.7",
+    "bootstrap": ">=3.0.3",
+    "hamsterjs": "^1.1.0",
+    "moment": ">=2.5.0",
+    "jquery": ">=2.0.3"
+  },
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ]
+}

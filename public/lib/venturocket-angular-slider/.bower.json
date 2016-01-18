@@ -1,0 +1,41 @@
+{
+  "name": "angular-slider",
+  "version": "0.3.2",
+  "main": "./build/angular-slider.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "lib",
+    "src",
+    "test",
+    ".g*",
+    ".editorconfig",
+    ".jshintrc",
+    ".travis.yml",
+    "Gruntfile.js",
+    "karma.conf.js",
+    "*.html"
+  ],
+  "dependencies": {
+    "angular": "~1.2.*",
+    "angular-touch": "~1.2.*"
+  },
+  "devDependencies": {
+    "angular-mocks": "*",
+    "angular-scenario": "*"
+  },
+  "resolutions": {
+    "angular": "v1.2.16"
+  },
+  "homepage": "https://github.com/Venturocket/angular-slider",
+  "_release": "0.3.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.3.2",
+    "commit": "beea44c56a94d7ce0dfd158c68c4ab9da5d725a9"
+  },
+  "_source": "git://github.com/Venturocket/angular-slider.git",
+  "_target": "~0.3.2",
+  "_originalSource": "venturocket-angular-slider"
+}

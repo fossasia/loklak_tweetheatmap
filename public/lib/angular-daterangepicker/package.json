@@ -1,0 +1,24 @@
+{
+  "name": "angular-daterangepicker",
+  "version": "0.2.2",
+  "homepage": "https://github.com/fragaria/angular-daterangepicker",
+  "authors": [
+    "Filip Vařecha <filip.varecha@fragaria.cz>",
+    "Tibor Kulčár <tibor.kulcar@fragaria.cz>",
+    "Lukáš Marek <lukas.marek@fragaria.cz>"
+  ],
+  "description": "Angular.js wrapper for Dan Grosmann's bootstrap date range picker (https://github.com/dangrossman/bootstrap-daterangepicker).",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "coffeelint": "^1.12.1",
+    "grunt": "~0.4.1",
+    "grunt-coffeelint": "^0.0.13",
+    "grunt-contrib-coffee": "^0.13.0",
+    "grunt-contrib-uglify": "^0.9.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-ng-annotate": "^1.0.1",
+    "grunt-wiredep": "^2.0.0",
+    "load-grunt-tasks": "^3.3.0"
+  }
+}

@@ -1,0 +1,26 @@
+{
+    "name": "angular-slider",
+    "version": "0.3.2",
+    "description": "Slider directive for AngularJS.",
+    "main": "",
+    "scripts": {
+        "test": "karma start --single-run --no-auto-watch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/Venturocket/angular-slider.git"
+    },
+    "author": "Venturocket, Inc.",
+    "license": "MIT",
+    "devDependencies": {
+        "karma": "~0.10",
+        "karma-jasmine": "*",
+        "karma-chrome-launcher": "*",
+        "karma-firefox-launcher": "*",
+        "grunt": "~0.4.1",
+        "grunt-contrib-jshint": "~0.6.0",
+        "grunt-contrib-nodeunit": "~0.2.0",
+        "grunt-contrib-uglify": "~0.2.2",
+        "grunt-contrib-concat": "*"
+    }
+}

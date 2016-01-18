@@ -1,0 +1,20 @@
+{
+  "name": "hamsterjs",
+  "version": "1.1.0",
+  "main": "hamster.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "homepage": "https://github.com/monospaced/hamster.js",
+  "_release": "1.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.1.0",
+    "commit": "6813da3d12a5eddc54726e4db18897a1820121c2"
+  },
+  "_source": "git://github.com/monospaced/hamster.js.git",
+  "_target": "^1.1.0",
+  "_originalSource": "hamsterjs"
+}

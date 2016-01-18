@@ -5,6 +5,9 @@
   <meta name="author" content="Seva Zhidkov">
 
   <link rel="stylesheet" href="http://openlayers.org/en/v3.12.1/css/ol.css" type="text/css">
+  <link rel="stylesheet" href="public/lib/bootstrap/dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="public/lib/bootstrap-daterangepicker/daterangepicker.css"/>
+  <link rel="stylesheet" href="public/lib/bootstrap-daterangepicker/daterangepicker.css"/>
   <style>
   .map {
     height: 800px;
@@ -14,7 +17,12 @@
 
   <title>Tweet Heatmap</title>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
+  <script src="public/lib/jquery/dist/jquery.min.js"></script>
+  <script src="public/lib/angular/angular.min.js"></script>
+  <script src="public/lib/moment/min/moment.min.js"></script>
+  <script src="public/lib/bootstrap-daterangepicker/daterangepicker.js"></script>
+  <script src="public/lib/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+  <script src="public/lib/angular-daterangepicker/js/angular-daterangepicker.min.js"></script>
   <script src="http://openlayers.org/en/v3.12.1/build/ol.js" type="text/javascript"></script>
   <script src="js/tweet-heatmap.js"></script>
 </head>
@@ -22,10 +30,13 @@
 <body>
   <div ng-controller="search">
     <form ng-submit="search()">
-      <input type="text" placeholder="Enter search query" ng-model="query">
-      <button type="submit">Search</button>
+      <input type="text" class="form-control" placeholder="Search query" ng-model="query" style="width: 50%; margin: 1%;">
+      <input date-range-picker class="form-control date-picker" placeholder="Tweets interval (optional)" type="text" ng-model="datePicker" style="width: 50%; margin: 1%;"/>
+      <input id="timepicker1" placeholder="Since time" class="form-control" data-provide="timepicker" ng-model="sinceTime" data-template="modal" data-minute-step="1" data-modal-backdrop="true" type="text" style="width: 50%; margin: 1%;"/>
+      <input id="timepicker2" placeholder="Until time" class="form-control" data-provide="timepicker" ng-model="untilTime" data-template="modal" data-minute-step="1" data-modal-backdrop="true" type="text" style="width: 50%; margin: 1%;"/>
+      <button type="submit" style="margin: 1%;" class="btn btn-default">Search</button>
     </form>
-    {{ loading }}
+    <div class="alert alert-info" role="alert" ng-if="loading"><b>{{ loading }}</b></div>
     <div id="map" class="map"></div>
   </div>
 

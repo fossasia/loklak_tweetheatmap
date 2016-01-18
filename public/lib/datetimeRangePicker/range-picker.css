@@ -1,0 +1,179 @@
+/* jrg-eRangePicker */
+.rg-range-picker {
+  max-width: 615px;
+}
+.rg-range-picker .rg-range-picker-box {
+  width: 100%;
+  padding: 0;
+  background-color: #ffffff;
+}
+.rg-range-picker .rg-range-picker-calendars {
+  border-bottom: solid 1px #ededed;
+}
+.rg-range-picker .rg-range-picker-calendars:before,
+.rg-range-picker .rg-range-picker-calendars:after {
+  content: " ";
+  display: table;
+}
+.rg-range-picker .rg-range-picker-calendars:after {
+  clear: both;
+}
+.rg-range-picker .rg-range-picker-calendars .rg-range-picker-calendar-box {
+  float: left;
+  width: 50%;
+  border-right: solid 1px #ededed;
+  text-align: center;
+  margin: 0 auto;
+}
+.rg-range-picker .rg-range-picker-calendars .rg-range-picker-calendar-box.right,
+.rg-range-picker .rg-range-picker-calendars .rg-range-picker-calendar-box:last-child {
+  border-right-width: 0;
+}
+.rg-range-picker .rg-range-picker-calendars .rg-range-picker-calendar-label {
+  margin-bottom: 14px;
+  margin-top: 14px;
+  color: #999999;
+  font-weight: 200;
+}
+.rg-range-picker.rg-range-picker-responsive .rg-range-picker-calendars {
+  border-bottom-width: 0;
+}
+.rg-range-picker.rg-range-picker-responsive .rg-range-picker-calendars .rg-range-picker-calendar-box {
+  float: none;
+  width: auto;
+  border-right-width: 0;
+  margin: 0 auto 14px;
+  border-bottom: solid 1px #ededed;
+}
+.rg-range-picker.rg-range-picker-responsive .rg-range-picker-calendars .rg-range-picker-calendar-label {
+  margin-bottom: 14px;
+  margin-top: 14px;
+  color: #999999;
+  font-weight: 200;
+}
+.clean-calendar > table {
+  width: 100%;
+}
+.clean-calendar > table:focus {
+  outline: none !important;
+}
+.clean-calendar > table thead tr:first-child {
+  background-color: #EAF5FC;
+}
+.clean-calendar > table thead tr th .btn {
+  background-color: transparent !important;
+}
+.clean-calendar > table .text-info {
+  color: #ffffff;
+}
+.clean-calendar .btn {
+  border-width: 0;
+}
+.clean-calendar .btn,
+.clean-calendar .btn:hover,
+.clean-calendar .btn:focus,
+.clean-calendar .btn:active {
+  outline: none !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.rg-range-picker-slider {
+  padding: 15px 20px;
+  position: relative;
+  min-height: 30px;
+}
+.rg-range-picker-slider .rg-range-picker-slider-labels {
+  margin-bottom: 20px;
+}
+.rg-range-picker-slider .rg-range-picker-slider-labels .row {
+  position: relative;
+}
+.rg-range-picker-slider .rg-range-picker-slider-labels .rg-range-picker-divider {
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  top: 10.5px;
+  border-top: solid 1px #ededed;
+  text-align: center;
+}
+.rg-range-picker-slider .rg-range-picker-slider-labels .rg-range-picker-divider .label {
+  position: relative;
+  top: -10.5px;
+  border: solid 1px #ededed;
+  background-color: #ffffff;
+  color: #5cb85c;
+  font-weight: 300;
+  font-size: 12px;
+  font-style: italic;
+  padding: 6px 8px 6px 10px;
+  border-radius: 50%;
+}
+.label.label-range-picker {
+  border: solid 1px #ededed;
+  background-color: #ffffff;
+  color: #666666;
+  font-weight: 300;
+  border-radius: 14px;
+  font-size: 12px;
+}
+.clean-slider {
+  position: relative;
+  height: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  overflow: hidden;
+}
+.clean-slider .bar {
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.clean-slider .bar.full {
+  height: 20px;
+  background-color: #f4c37d;
+  border-radius: 10px;
+}
+.clean-slider .bar.selection {
+  background-color: #eea236;
+  height: 100%;
+  border-radius: 10px;
+}
+.clean-slider .bubble {
+  text-indent: -999px;
+}
+.clean-slider .input.low,
+.clean-slider .input.high {
+  cursor: ew-resize;
+}
+.clean-slider .input.selection {
+  cursor: all-scroll;
+}
+.clean-slider .pointer.low {
+  cursor: ew-resize;
+}
+.clean-slider .pointer.high {
+  cursor: ew-resize;
+}
+.clean-slider .pointer.low,
+.clean-slider .pointer.high {
+  background-color: #ffffff;
+  width: 20px;
+  height: 20px;
+  text-indent: -999px;
+  overflow: hidden;
+  border-radius: 50%;
+  position: relative;
+}
+.clean-slider .pointer.low:after,
+.clean-slider .pointer.high:after {
+  content: ' ';
+  background-color: #f0ad4e;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  margin-top: -6px;
+  margin-left: -6px;
+  border-radius: 50%;
+}
