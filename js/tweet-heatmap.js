@@ -51,11 +51,17 @@ app.controller('search', function ($scope, $http) {
     }
     return hours + ':' + minutes;
   }
+  
+  $scope.showModal = false;
 
   $scope.search = function() {
     query = $scope.query;
+    
     if (!query) {
-      return;
+              //modal opened 
+              $scope.showModal = !$scope.showModal;
+              console.log("Modal opened");
+              return;
     }
 
     var startDatetime, endDatetime;
@@ -125,3 +131,47 @@ app.controller('search', function ($scope, $http) {
     });
   }
 });
+app.directive('modal', function () {
+    return {
+      template: '<div class="modal fade">' + 
+          '<div class="modal-dialog">' + 
+            '<div class="modal-content">' + 
+              '<div class="modal-header" style="background-color:#d2322d">' + 
+                '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' + 
+                '<h4 class="modal-title" style="color:white">{{ title }}</h4>' + 
+              '</div>' + 
+              '<div class="modal-body" ng-transclude></div>' + 
+            '</div>' + 
+          '</div>' + 
+        '</div>',
+      restrict: 'E',
+      transclude: true,
+      replace:true,
+      scope:true,
+      link: function postLink(scope, element, attrs) {
+        scope.title = attrs.title;
+
+        scope.$watch(attrs.visible, function(value){
+          if(value == true)
+            $(element).modal('show');
+          else
+            $(element).modal('hide');
+        });
+
+        $(element).on('shown.bs.modal', function(){
+          scope.$apply(function(){
+            scope.$parent[attrs.visible] = true;
+          });
+        });
+
+        $(element).on('hidden.bs.modal', function(){
+          scope.$apply(function(){
+            scope.$parent[attrs.visible] = false;
+          });
+        });
+      }
+    };
+  });
+
+
+
