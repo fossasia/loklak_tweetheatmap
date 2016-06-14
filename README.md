@@ -1,4 +1,6 @@
 # Tweet Heatmap
+
+[![Join the chat at https://gitter.im/fossasia/fossasia-loklak-tweetheatmap](https://badges.gitter.im/fossasia/fossasia-loklak-tweetheatmap.svg)](https://gitter.im/fossasia/fossasia-loklak-tweetheatmap?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Heat map with tweets by search query using Loklak API and OpenLayers 3.
 ## Try it
 The project is avaliable in http://fossasia.github.io/fossasia-loklak-tweetheatmap
